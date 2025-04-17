@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm Archives | Driftly</title>
+    <link rel="stylesheet" href="album.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="realm-container">
+        <!-- Sidebar Navigation -->
+        <div class="realm-sidebar">
+            <h1>THE ARCHIVES</h1>
+            <ul class="realm-nav">
+                <li><a href="homepage.html">🏰 CASTLE</a></li>
+                <li><a href="profile.html">📜 SCROLLS</a></li>
+                <li><a href="message.html">🕊️ RAVENS</a></li>
+                <li class="active"><a href="albums.html">🖼️ TAPESTRIES</a></li>
+                <li><a href="profile.html">👑 MY REIGN</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="realm-content">
+            <!-- Album Grid -->
+            <div class="tapestry-gallery">
+                <h2>HOUSE TAPESTRIES</h2>
+                
+                <!-- Album 1 -->
+                <div class="tapestry" onclick="openAlbum('dragonstone')">
+                    <div class="tapestry-cover" style="background-image: url('images/dragonstone-cover.jpg')">
+                        <div class="sigil">🐉</div>
+                    </div>
+                    <h3>Dragonstone</h3>
+                    <p>24 Images</p>
+                </div>
+                
+                <!-- Album 2 -->
+                <div class="tapestry" onclick="openAlbum('winterfell')">
+                    <div class="tapestry-cover" style="background-image: url('images/winterfell-cover.jpg')">
+                        <div class="sigil">🐺</div>
+                    </div>
+                    <h3>Winterfell</h3>
+                    <p>18 Images</p>
+                </div>
+                
+                <!-- Album 3 -->
+                <div class="tapestry" onclick="openAlbum('kings-landing')">
+                    <div class="tapestry-cover" style="background-image: url('images/kingslanding-cover.jpg')">
+                        <div class="sigil">🦁</div>
+                    </div>
+                    <h3>King's Landing</h3>
+                    <p>32 Images</p>
+                </div>
+                
+                <!-- Add 5 more albums -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Album Modal -->
+    <div id="albumModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAlbum()">&times;</span>
+            <h2 id="albumTitle">Dragonstone</h2>
+            <div class="image-viewer">
+                <button class="nav-btn" onclick="prevImage()">&#10094;</button>
+                <img id="currentImage" src="images/dragonstone1.jpg" alt="Tapestry">
+                <button class="nav-btn" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div class="image-grid" id="thumbnailContainer">
+                <!-- Thumbnails will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

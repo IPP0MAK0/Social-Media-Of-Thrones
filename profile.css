@@ -1,0 +1,270 @@
+
+:root {
+    --gold: #d4af37;
+    --dark-gold: #b59530;
+    --grey: #2b2b2b;
+    --light-grey: #3a3a3a;
+    --parchment: #f0e6d2;
+    --text-dark: #1a1a1a;
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Cinzel', serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+.scroll-container {
+    max-width: 800px;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.7));
+}
+
+.parchment {
+    background-color: var(--parchment);
+    padding: 40px;
+    border: 1px solid var(--gold);
+    position: relative;
+}
+
+/* Header */
+.sigil-header {
+    color: var(--grey);
+    text-align: center;
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+    letter-spacing: 3px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 15px;
+}
+
+/* Navigation */
+.realm-navigation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    color: var(--grey);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px 10px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--gold);
+}
+
+.nav-link.active:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 30px 0;
+}
+
+/* PROFILE SECTION */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* Ensures perfect circle */
+    aspect-ratio: 1/1;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.house-badge {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   
+    padding: 5px;
+}
+
+.house-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    color: var(--grey);
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+}
+
+.profile-title {
+    color: var(--light-grey);
+    font-style: italic;
+    margin: 0 0 15px 0;
+}
+
+.profile-bio {
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid var(--gold);
+}
+
+.profile-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    text-transform: uppercase;
+}
+
+/* Scroll Posts */
+.section-title {
+    color: var(--grey);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid var(--gold);
+}
+
+.scroll-post {
+    margin-bottom: 30px;
+}
+
+.scroll-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.scroll-author {
+    font-weight: bold;
+    color: var(--grey);
+    font-size: 1.2rem;
+}
+
+.scroll-time {
+    color: var(--light-grey);
+    font-style: italic;
+}
+
+.scroll-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-left: 20px;
+    padding-left: 15px;
+    border-left: 2px solid var(--gold);
+}
+
+.scroll-engagement {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+.likes {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.comments {
+    color: var(--light-grey);
+}
+
+/* Realm Search */
+.realm-search {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.realm-input {
+    flex: 1;
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+}
+
+.realm-search-btn {
+    padding: 0 20px;
+    background: var(--grey);
+    color: var(--gold);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.realm-search-btn:hover {
+    background: var(--light-grey);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-bio, .scroll-content {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    .realm-navigation {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

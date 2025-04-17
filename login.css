@@ -1,0 +1,127 @@
+/* ===== Game of Thrones Login/Signup Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    /* Background image with overlay */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('Images/g.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+}
+
+/* Container styling */
+.container {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    border: 1px solid #d4af37;
+    text-align: center;
+}
+
+/* Logo */
+.logo-container img {
+    width: 100px;
+    height: auto;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h2 {
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    background: #2a2a2a;
+    color: #f5f5f5;
+    font-size: 16px;
+    font-family: 'Cinzel', serif;
+}
+
+input:focus {
+    outline: none;
+    background: #333;
+    border-color: #f0c674;
+}
+
+/* Buttons */
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: rgba(212, 175, 55, 0.3);
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background: rgba(212, 175, 55, 0.5);
+    color: #f5f5f5;
+}
+
+/* Footer text */
+.footer-text {
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.footer-text a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-text a:hover {
+    color: #f0c674;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .logo-container img {
+        width: 80px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

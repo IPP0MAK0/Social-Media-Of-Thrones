@@ -1,0 +1,217 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #1a1a1a;
+    color: #d4af37;
+    margin: 0;
+    padding: 0;
+}
+
+.realm-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.realm-sidebar {
+    width: 250px;
+    background-color: #0d0d0d;
+    padding: 2rem;
+    border-right: 2px solid #d4af37;
+}
+
+.realm-sidebar h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #d4af37;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 1rem;
+}
+
+.realm-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.realm-nav li {
+    margin: 1.5rem 0;
+}
+
+.realm-nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.realm-nav a:hover, .realm-nav .active a {
+    color: #d4af37;
+    transform: translateX(5px);
+}
+
+/* ===== Tapestry Gallery ===== */
+.realm-content {
+    flex: 1;
+    padding: 2rem;
+    background: url('images/parchment-texture.jpg') center/cover;
+}
+
+.tapestry-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.tapestry {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.tapestry:hover {
+    transform: translateY(-5px);
+}
+
+.tapestry-cover {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #d4af37;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sigil {
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.7);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d4af37;
+}
+
+.tapestry h3 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1.3rem;
+}
+
+.tapestry p {
+    color: #a0a0a0;
+    margin: 0;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    border: 3px solid #d4af37;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #d4af37;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.image-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    height: 500px;
+    position: relative;
+}
+
+#currentImage {
+    max-height: 100%;
+    max-width: 100%;
+    border: 2px solid #d4af37;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #d4af37;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.nav-btn:first-child {
+    left: 10px;
+}
+
+.nav-btn:last-child {
+    right: 10px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.image-grid img:hover {
+    border-color: #d4af37;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .realm-container {
+        flex-direction: column;
+    }
+    
+    .realm-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #d4af37;
+    }
+    
+    .tapestry-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}

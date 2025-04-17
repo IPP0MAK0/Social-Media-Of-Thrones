@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE REALM</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="realm-container">
+        <!-- Sidebar -->
+        <div class="realm-sidebar">
+            <h1>THE REALM</h1>
+            <h2>DAY IN</h2>
+            <ul class="realm-nav">
+                <li>CASTLE</li>
+                <li>REALM</li>
+                <li>SCROLLS</li>
+                <li>RAVENS</li>
+                <li>TAPESTRIES</li>
+                <li>MY REIGN</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="realm-content">
+            <!-- My Day Stories -->
+            <div class="my-day-container">
+                <h2 class="section-title">MY DAY</h2>
+                <div class="stories">
+                    <div class="story" data-story="1">
+                        <div class="story-circle" style="background-image: url('Images/dragons.jpg ')"> </div>
+             
+                        <span>Daenerys</span>
+                    </div>
+                    <div class="story" data-story="2">
+                        <div class="story-circle" style="background-image: url('Images/story2.jpg')"></div>
+                        <span>Jon Snow</span>
+                    </div>
+                    <div class="story" data-story="3">
+                        <div class="story-circle" style="background-image: url('Images/story3.jpg')"></div>
+                        <span>Tyrion</span>
+                    </div>
+                    <div class="story" data-story="4">
+                        <div class="story-circle" style="background-image: url('Images/story4.jpg')"></div>
+                        <span>Arya</span>
+                    </div>
+                    <div class="story" data-story="5">
+                        <div class="story-circle" style="background-image: url('Images/story5.jpg')"></div>
+                        <span>Sansa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Modal -->
+            <div class="story-modal">
+                <div class="modal-content">
+                    <div class="story-viewer">
+                        <img id="storyImage" src="" alt="Story">
+                        <button class="nav-btn prev-btn">❮</button>
+                        <button class="nav-btn next-btn">❯</button>
+                        <div class="close-btn">✕</div>
+                    </div>
+                    <div class="story-progress">
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts -->
+            <div class="posts-container">
+                <!-- Post 1 -->
+                <div class="realm-post">
+                    <div class="post-header">
+                        <h3>DAENERYS TARGARYEN</h3>
+                        <span class="post-time">1 HOUR AGO</span>
+                    </div>
+                    <div class="post-content">
+                        <p>FIRE CANNOT KILL A DRAGON.</p>
+                    </div>
+                    <div class="post-image">
+                        <img src="Images/dragons.jpg" alt="">
+                    </div>
+                    <div class="post-actions">
+                        <span>⚔️ 0</span>
+                        <span>💬 280</span>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="realm-post">
+                    <div class="post-header">
+                        <h3>JON SNOW</h3>
+                        <span class="post-time">3 HOURS AGO</span>
+                    </div>
+                    <div class="post-content">
+                        <p>THE NORTH REMEMBERS.</p>
+                    </div>
+                    <div class="post-image">
+                        <img src="Images/north.jpg" alt="">
+                    </div>
+                    <div class="post-actions">
+                        <span>⚔️ 42</span>
+                        <span>💬 156</span>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="realm-post">
+                    <div class="post-header">
+                        <h3>TYRION LANNISTER</h3>
+                        <span class="post-time">5 HOURS AGO</span>
+                    </div>
+                    <div class="post-content">
+                        <p>I DRINK AND I KNOW THINGS.</p>
+                    </div>
+                    <div class="post-actions">
+                        <span>⚔️ 87</span>
+                        <span>💬 342</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

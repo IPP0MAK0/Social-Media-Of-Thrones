@@ -1,0 +1,389 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #1a1a1a;
+    color: #d4af37;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Layout ===== */
+.realm-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.realm-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* ===== Sidebar ===== */
+.realm-sidebar {
+    width: 250px;
+    background-color: #0d0d0d;
+    padding: 2rem;
+    border-right: 2px solid #d4af37;
+    text-align: center;
+}
+
+.realm-sidebar h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #d4af37;
+}
+
+.realm-sidebar h2 {
+    font-size: 1.3rem;
+    color: #a0a0a0;
+    margin: 1.5rem 0;
+}
+
+.realm-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.realm-nav li {
+    color: #f5f5f5;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.realm-nav li:hover {
+    color: #d4af37;
+}
+
+/* ===== My Day Stories ===== */
+.my-day-container {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #d4af37;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stories {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.story-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    background-color: #2b2b2b;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Posts ===== */
+.posts-container {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.realm-post {
+    background-color: #2b2b2b;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 1px solid #d4af37;
+    text-align: center;
+}
+
+.post-header {
+    margin-bottom: 1rem;
+}
+
+.post-header h3 {
+    color: #d4af37;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.post-time {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+.post-image {
+    background-color: #333;
+    height: fit-content;
+    width: fit-content;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    overflow: hidden;
+}
+
+.post-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .realm-container {
+        flex-direction: column;
+    }
+    
+    .realm-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #d4af37;
+    }
+}
+
+/* ===== Story Styles ===== */
+.stories {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.stories::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.story-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.story-circle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #d4af37, #8b0000) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, 
+          linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+}
+
+.story:hover .story-circle {
+    transform: scale(1.1);
+}
+
+/* Story Modal */
+.story-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+}
+
+.story-viewer {
+    height: 500px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#storyImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #d4af37;
+    border: none;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-progress {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.progress-bar {
+    height: 3px;
+    background: #333;
+    flex: 1;
+    max-width: 30px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #d4af37;
+    transition: width linear;
+}
+
+/* ===== Global Responsive Image Styles ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Responsive Containers (Optional) ===== */
+.my-day-container,
+.posts-container,
+.modal-content {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+/* ===== More Responsive Layout Tweaks ===== */
+@media (max-width: 768px) {
+    .post-image {
+        width: 100%;
+    }
+
+    .realm-post {
+        padding: 1rem;
+    }
+
+    .story-viewer {
+        height: 300px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .close-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .realm-sidebar h1 {
+        font-size: 1.5rem;
+    }
+
+    .realm-sidebar h2 {
+        font-size: 1rem;
+    }
+
+    .post-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .post-content p {
+        font-size: 1rem;
+    }
+
+    .story-circle {
+        width: 60px;
+        height: 60px;
+    }
+}
+
